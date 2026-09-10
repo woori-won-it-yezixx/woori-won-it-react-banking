@@ -8,7 +8,7 @@ React로 만든 간단한 인터넷 뱅킹 화면입니다. 계좌별 잔액과 
 
 ## 2. 화면
 
-![뱅킹 이미지1](./images/banking_image_1.png)![뱅킹 이미지2](./images/banking_image_2.png)
+![뱅킹 시연 GIF](./images/web_banking.gif)![뱅킹 이미지1](./images/banking_image_1.png)![뱅킹 이미지2](./images/banking_image_2.png)
 
 ## 3. 실행 방법
 
