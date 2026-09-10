@@ -96,7 +96,7 @@ function App() {
   // return 뒤에 렌더링 될 부분을 적습니다.
   return (
     <>
-      <UserProvider user={{ name: "김연지", grade: "우수" }}>
+      <UserProvider user={{ name: "김예지", grade: "우수" }}>
         <Clock />
         <Header />
         <div className="toolbar">
