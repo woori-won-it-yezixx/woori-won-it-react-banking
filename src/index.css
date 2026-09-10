@@ -279,6 +279,11 @@ header h1 {
 }
 
 .field input:focus {
-  border: none;
+  outline: none;
   border-bottom: solid 1px var(--brand);
+}
+
+.error {
+  font-size: 14px;
+  color: #dc1655;
 }
