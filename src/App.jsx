@@ -58,7 +58,9 @@ function App() {
         category: "이체",
         memo: "1만원 입금",
         counterparty: "내 계좌",
-        txDatetime: new Date().toISOString().slice(0, 19),
+        txDatetime: new Date().toLocaleString("sv-SE", {
+          timeZone: "Asia/Seoul",
+        }),
       },
       ...prev,
     ]);
