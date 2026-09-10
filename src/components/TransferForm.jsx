@@ -64,55 +64,57 @@ function TransferForm({ fromAccount, onTransfer }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="field">
-        <label className="label-heading">받는 계좌</label>
-        <input
-          type="text"
-          name="toAccount"
-          value={form.toAccount}
-          onChange={handleChange}
-          placeholder="계좌번호 또는 이름"
-        />
+      <div className="transfer-form">
+        <div className="field">
+          <label>받는 계좌</label>
+          <input
+            type="text"
+            name="toAccount"
+            value={form.toAccount}
+            onChange={handleChange}
+            placeholder="계좌번호 또는 이름"
+          />
+        </div>
+
+        <div className="field">
+          <label>보낼 금액</label>
+          <input
+            type="text"
+            name="amount"
+            value={
+              form.amount === ""
+                ? ""
+                : Number(form.amount).toLocaleString("ko-KR")
+            }
+            onChange={handleChange}
+            placeholder="0"
+            inputMode="numeric"
+          />
+        </div>
+
+        <div className="field">
+          <label className="label-heading">메모 (선택)</label>
+          <input
+            type="text"
+            name="memo"
+            value={form.memo}
+            onChange={handleChange}
+            placeholder="예) 용돈"
+          />
+        </div>
+
+        {touched && errorMessage !== "" && (
+          <p className="error">{errorMessage}</p>
+        )}
+
+        <button
+          className="btn"
+          type="submit"
+          disabled={sending || errorMessage !== ""}
+        >
+          {sending ? "이체 중..." : "이체"}
+        </button>
       </div>
-
-      <div className="field">
-        <label className="label-heading">보낼 금액</label>
-        <input
-          type="text"
-          name="amount"
-          value={
-            form.amount === ""
-              ? ""
-              : Number(form.amount).toLocaleString("ko-KR")
-          }
-          onChange={handleChange}
-          placeholder="0"
-          inputMode="numeric"
-        />
-      </div>
-
-      <div className="field">
-        <label className="label-heading">메모 (선택)</label>
-        <input
-          type="text"
-          name="memo"
-          value={form.memo}
-          onChange={handleChange}
-          placeholder="예) 용돈"
-        />
-      </div>
-
-      {touched && errorMessage !== "" && (
-        <p className="error">{errorMessage}</p>
-      )}
-
-      <button
-        className="btn"
-        type="submit"
-        disabled={sending || errorMessage !== ""}
-      >
-        {sending ? "이체 중..." : "이체"}
-      </button>
     </form>
   );
 }

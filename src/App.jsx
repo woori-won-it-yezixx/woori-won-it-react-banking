@@ -38,11 +38,30 @@ function App() {
   // map 함수를 가지고 특정 dict의 모든 값-value에 접근해서
   // balance 라는 key에만 10000을 더합니다.
   function handleDeposit(accountId) {
+    const account = accountList.find((a) => a.accountId === accountId);
+    const amount = 10000;
+    const nextBalance = account.balance + amount;
+
     setAccountList((accounts) =>
       accounts.map((a) =>
-        a.accountId === accountId ? { ...a, balance: a.balance + 10000 } : a,
+        a.accountId === accountId ? { ...a, balance: nextBalance } : a,
       ),
     );
+
+    setTransactions((prev) => [
+      {
+        txId: Date.now(),
+        accountId,
+        txType: "입금",
+        amount,
+        balanceAfter: nextBalance,
+        category: "이체",
+        memo: "1만원 입금",
+        counterparty: "내 계좌",
+        txDatetime: new Date().toISOString().slice(0, 19),
+      },
+      ...prev,
+    ]);
   }
 
   // 추가: 이체 폼(TransferForm)에서 이체 버튼을 누르면 이 함수가 실행됩니다.
