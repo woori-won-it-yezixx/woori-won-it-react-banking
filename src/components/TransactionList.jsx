@@ -36,14 +36,6 @@ function TransactionList({ transactions, hideAmount }) {
     return total + signedAmount;
   }, 0);
 
-  // if (loading) return <p className="muted">거래 내역을 불러오는 중...</p>;
-  // if (error)
-  //   return (
-  //     <button className="btn" onClick={reload}>
-  //       다시 시도
-  //     </button>
-  //   );
-
   return (
     <>
       <div>
