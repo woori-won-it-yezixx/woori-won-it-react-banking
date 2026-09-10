@@ -200,8 +200,9 @@ header h1 {
   background: transparent;
   color: var(--brand);
   border: 1px solid var(--brand);
-  border-radius: 5px;
+  border-radius: 10px;
   width: 110px;
+  height: 40px;
 }
 
 /* 필터 칩들을 감싸는 줄 */
