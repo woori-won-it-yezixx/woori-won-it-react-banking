@@ -277,7 +277,8 @@ header h1 {
   display: block;
   font-size: 13px;
   color: var(--muted);
-  margin-bottom: 4px;
+  margin: 2px;
+  padding-top: 5px;
 }
 
 .field input {
